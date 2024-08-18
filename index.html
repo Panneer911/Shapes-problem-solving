@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shape Calculator</title>
+    <style>
+        .container {
+            width: 500px;
+            margin: auto;
+            border: 1px solid #000;
+            padding: 10px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .container img {
+            width: 80px;
+            height: 80px;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container" style="background-color: blue;">
+    <img src="Capture 1.PNG" alt="Circle" onclick="calculateArea('circle')">
+    <img src="Capture 2.PNG" alt="Square" onclick="calculateArea('square')">
+    <img src="Capture 3.PNG" alt="Cylinder" onclick="calculateArea('cylinder')">
+    <img src="Capture 4.PNG" alt="Simple Interest" onclick="calculateArea('interest')">
+    <img src="Capture 5.PNG" alt="ABC" onclick="calculateArea('abc')">
+</div>
+
+<script>
+    function calculateArea(shape) {
+        let res;
+
+        switch(shape) {
+            case 'circle':
+                let radius = prompt('Enter the radius of the circle');
+                res = Math.PI * radius * radius;
+                alert(`The area of the circle is: ${res}`);
+                break;
+            case 'square':
+                let side = prompt('Enter the side of the square');
+                res = side * side;
+                alert(`The area of the square is: ${res}`);
+                break;
+            case 'cylinder':
+                let r = prompt('Enter the radius of the cylinder');
+                let h = prompt('Enter the height of the cylinder');
+                res = Math.PI * r * r * h;
+                alert(`The volume of the cylinder is: ${res}`);
+                break;
+            case 'interest':
+                let principal = prompt('Enter the principal amount');
+                let rate = prompt('Enter the rate of interest');
+                let time = prompt('Enter the time (in years)');
+                res = (principal * rate * time) / 100;
+                alert(`The simple interest is: ${res}`);
+                break;
+            case 'abc':
+                alert('ABC clicked, no calculation assigned!');
+                break;
+            default:
+                alert('Invalid shape');
+        }
+    }
+</script>
+
+</body>
+</html>
